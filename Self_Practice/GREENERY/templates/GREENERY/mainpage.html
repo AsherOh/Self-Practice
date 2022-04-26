@@ -5,19 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asher 개인 연습장</title>
+    <link rel="stylesheet" href="lotto.css">
 </head>
 <body>
-    <h1>로또 공 뽑기</h1>    
+    <h1>로또 번호 추첨기</h1>
     <script>
-        var lotto=[];
+        var lotto = [];
+        while (lotto.length < 6) {
+            var num = parseInt(Math.random() * 45 + 1);
+            if (lotto.indexOf(num) == -1) {
+                lotto.push(num);
+            }
+        }
+        lotto.sort((a,b)=>a-b);
+        document.write("<div class='ball ball1'>" + lotto[0] + "</div>");
+        document.write("<div class='ball ball2'>" + lotto[1] + "</div>");
+        document.write("<div class='ball ball3'>" + lotto[2] + "</div>");
+        document.write("<div class='ball ball4'>" + lotto[3] + "</div>");
+        document.write("<div class='ball ball5'>" + lotto[4] + "</div>");
+        document.write("<div class='ball ball6'>" + lotto[5] + "</div>");
         /*
         parseInt(); : 소수점 버리고 정수화
         .push(); : 배열 끝 항목 추가
         .length(); : 배열 길이
         .sort(); : 배열 값 정렬
         .sort((a, b)=>a-b); : 숫자 오름차순 정렬(익명함수)
-        hi
         */
-    </script>
+    </script>        
 </body>
 </html>
